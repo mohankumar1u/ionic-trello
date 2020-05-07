@@ -10,9 +10,9 @@
            </button>
         </div>
          
-        <div ng-repeat="board in boards" class="item item-text-wrap" ng-click="addBoard()">
+        <ion-item  ng-repeat="board in boards" class="item item-text-wrap" href="#/boards/{{$index}}">
             {{board.name}}
-        </div>
+        </ion-item >
     </ion-content>
   </ion-view>
   

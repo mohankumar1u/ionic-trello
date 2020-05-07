@@ -26,11 +26,18 @@ app.run(function($ionicPlatform) {
 });
 app.config(($stateProvider, $urlRouterProvider )=>{
   $stateProvider.state('board',{
-    url:'/',
+    url:'/boards',
     templateUrl:'templates/board.html',
     controller: 'boardCtrl'
 
   });
-  $urlRouterProvider.otherwise('/');
+  $stateProvider.state('lists',{
+    url:'/boards/:boardId',
+    templateUrl:'templates/lists.html',
+    controller: 'listsCtrl'
+
+  });
+ 
+  $urlRouterProvider.otherwise('/boards');
 
 });
