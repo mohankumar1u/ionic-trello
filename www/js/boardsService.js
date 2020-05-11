@@ -36,6 +36,20 @@ app.factory('boardsService', ['$http',  function($http){
                    return boards;
                  });
                  return boards;
+         },
+         deleteBoards: function(id,$location){
+          let response=$http({
+            method:'DELETE',
+            url:`https://api.trello.com/1/boards/${id}?key=${trello[0].key}&token=${trello[0].apiKey}`
+          }).then(function successCallback(response) {
+           
+            $location.path('/boards')
+            return response.data;
+           }, function errorCallback(response) {
+             // called asynchronously if an error occurs
+             // or server returns response with an error status.
+             return boards;
+           });
          }
         
     }

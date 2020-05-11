@@ -1,5 +1,6 @@
-<ion-view view-title='Trello'>
-    <ion-content>
+<ion-view cache-view="false">
+  <ion-nav-title>{{title}}</ion-nav-title>
+    <ion-content >
         <div class="item item-input-inset">
         <label class="item-input-wrapper">
             <input ng-model="val" type="text" placeholder="new board">
@@ -10,7 +11,8 @@
            </button>
         </div>
          
-        <ion-item  ng-repeat="board in boards" class="item item-text-wrap" href="#/boards/{{$index}}">
+        <ion-item  ng-repeat="board in boards" class="item item-avatar" href="#/boards/{{$index}}">
+          <img src={{board.prefs.backgroundImage}}>
             {{board.name}}
         </ion-item >
     </ion-content>

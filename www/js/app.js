@@ -24,7 +24,8 @@ app.run(function($ionicPlatform) {
     }
   });
 });
-app.config(($stateProvider, $urlRouterProvider )=>{
+app.config(($stateProvider, $urlRouterProvider, $ionicConfigProvider)=>{
+  $ionicConfigProvider.backButton.text('').icon('ion-close');
   $stateProvider.state('board',{
     url:'/boards',
     templateUrl:'templates/board.html',
@@ -35,6 +36,13 @@ app.config(($stateProvider, $urlRouterProvider )=>{
     url:'/boards/:boardId',
     templateUrl:'templates/lists.html',
     controller: 'listsCtrl'
+
+  });
+
+  $stateProvider.state('cardDetails',{
+    url:'/boards/card/:cardId',
+    templateUrl:'templates/cardDetails.html',
+    controller: 'cardDetailsCtrl'
 
   });
  
