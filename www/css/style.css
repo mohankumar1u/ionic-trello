@@ -21,9 +21,18 @@
 .close-icon{
     position: absolute;
     z-index: 3;
-    right: 30px;
+    right: 6px;
     top: 20px;
 }
 .position-absolute{
     position: relative;
+}
+.cards{
+    max-height: 50vh;
+}
+.checklistHide{
+    display:none
+}
+.checklistdisplay{
+    display:block
 }
