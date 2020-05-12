@@ -1,0 +1,64 @@
+<ion-view cache-view="false">
+    <ion-nav-title>{{title}}</ion-nav-title>
+    <ion-nav-buttons side="right">
+        <button class="button button-clear ion-more" native-transitions nav-direction="back" ui-sref="app.play"
+            ng-click="boardPopup()">
+        </button>
+    </ion-nav-buttons>
+    <ion-content scroll="false" ng-style="backgroundImg">
+        <ion-slides options="options" slider="data.slider">
+            <ion-slide-page ng-repeat="list in lists">
+                <div class="list card padding card-stable">
+                    <div class="item item-avatar row">{{list.name}}</div>
+                    <!-- <i class="icon ion-more list-popup" ng-click='listPopup(list)'></i> -->
+                    <ion-list>
+                        <ion-scroll scrollY="true" scrollbar-y="false" class="cards">
+
+                            <a href="#/boards/card/{{card.id}}" class="item  col" ng-repeat="card in list.cards">
+                                {{card.name}}
+                            </a>
+                        </ion-scroll>
+                        <button class="button button-full button-stable"
+                            ng-class="{'addCardDisplay' : list.toggled, 'addCardHide' : !list.toggled}"
+                            ng-click="displayNewCard(list)">
+                            add new card
+                        </button>
+                        <div class="item item-input-inset"
+                            ng-class="{'addCardHide' : list.toggled, 'addCardDisplay' : !list.toggled}">
+                            <label class="item-input-wrapper">
+                                <input ng-model="val" type="text" placeholder=" Add new card">
+                            </label>
+                            <button class="button button-small button-positive cancel" ng-click="displayNewCard(list)">
+                                cancel
+                            </button>
+                            <button class="button button-small button-positive floatRight"
+                                ng-click="addcard(val, {{$index}});val=''">
+                                add
+                            </button>
+                        </div>
+                    </ion-list>
+                </div>
+            </ion-slide-page>
+            <ion-slide-page>
+                <button class="button button-full button-stable addlist"
+                    ng-class="{'addCardDisplay' : selectedDoard.toggled, 'addCardHide' : !selectedDoard.toggled}"
+                    ng-click="displayNewCard(selectedDoard)">
+                    add new list
+                </button>
+                <div class="item item-input-inset"
+                    ng-class="{'addCardHide' : selectedDoard.toggled, 'addCardDisplay' : !selectedDoard.toggled}">
+                    <label class="item-input-wrapper">
+                        <input ng-model="val" type="text" placeholder=" Add new list">
+
+                    </label>
+                    <button class="button button-small button-positive cancel" ng-click="displayNewCard(selectedDoard)">
+                        cancel
+                    </button>
+                    <button class="button button-small button-positive floatRight" ng-click="addlist(val); val=''">
+                        add
+                    </button>
+                </div>
+            </ion-slide-page>
+        </ion-slides>
+    </ion-content>
+</ion-view>
