@@ -36,3 +36,17 @@
 .checklistdisplay{
     display:block
 }
+.addCardDisplay{
+    display:none
+}
+.addCardHide{
+    display:block
+}
+.cancel{
+    margin: 0px !important;
+}
+.addlist{
+    opacity: 0.6;
+    border: 10px;
+    border-radius: 4px;
+}
