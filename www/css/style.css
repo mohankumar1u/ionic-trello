@@ -39,8 +39,13 @@
 .addCardDisplay{
     display:none
 }
+.list-title{
+    background-color: lightgray;
+    font-size: x-large;
+}
 .addCardHide{
-    display:block
+    display:block;
+    background-color: lightgray;
 }
 .cancel{
     margin: 0px !important;
@@ -49,4 +54,14 @@
     opacity: 0.6;
     border: 10px;
     border-radius: 4px;
+}
+.archive-button{
+    width: 100%;
+    border-color: transparent;
+    background-color: #f8f8f8;
+    color: #444;
+    position: relative;
+}
+.list{
+    background-color: lightgray;
 }
