@@ -9,12 +9,12 @@
         <ion-slides options="options" slider="data.slider">
             <ion-slide-page ng-repeat="list in lists">
                 <div class="list card padding card-stable">
-                    <div class="item item-avatar row">{{list.name}}</div>
+                    <div class="item list-title item-avatar row">{{list.name}}</div>
                     <!-- <i class="icon ion-more list-popup" ng-click='listPopup(list)'></i> -->
                     <ion-list>
                         <ion-scroll scrollY="true" scrollbar-y="false" class="cards">
 
-                            <a href="#/boards/card/{{card.id}}" class="item  col" ng-repeat="card in list.cards">
+                            <a href="#/boards/card/{{card.id}}" class="item col" ng-repeat="card in list.cards">
                                 {{card.name}}
                             </a>
                         </ion-scroll>
