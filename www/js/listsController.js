@@ -3,9 +3,16 @@ app.controller('listsCtrl', function ($scope, listsService, $stateParams, boards
     boardsService.getBoards(1).then(function (data) {
     $scope.selectedDoard = data[parseInt($stateParams.boardId)];
     $scope.title =$scope.selectedDoard.name;
-    $scope.backgroundImg={
-       "background-image" : `url(${$scope.selectedDoard.prefs.backgroundImage})`
+    if($scope.selectedDoard.prefs.backgroundImage){
+      $scope.backgroundImg={
+         "background-image" : `url(${$scope.selectedDoard.prefs.backgroundImage})`
+      }
+    }else{
+      $scope.backgroundImg={
+         "background-image" : `url("../img/download.jpg")`
+      }
     }
+   
     console.log($scope.selectedDoard.prefs.backgroundImage)
     listsService.getlists($scope.selectedDoard.id).then(function (data) {
        $scope.lists = data
