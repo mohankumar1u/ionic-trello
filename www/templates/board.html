@@ -12,7 +12,8 @@
         </div>
          
         <ion-item  ng-repeat="board in boards"  class="item item-avatar" href="#/boards/{{$index}}">
-          <img src={{board.prefs.backgroundImage}}>
+          <img ng-if="board.prefs.backgroundImage" src={{board.prefs.backgroundImage}}>
+          <img ng-if="!board.prefs.backgroundImage" src="../img/download.jpg">
             {{board.name}}
         </ion-item >
     </ion-content>
