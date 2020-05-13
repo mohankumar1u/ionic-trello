@@ -41,7 +41,7 @@ app.controller('cardDetailsCtrl', function($scope, $stateParams, cardsService, c
     $scope.cardPopup=function(){
         var popup =  $ionicPopup.alert(
            {
-              template: '<button ng-click="archiveCard()">archive list</button>',
+              template: '<button class="archive-button button-light" ng-click="archiveCard()">archive list</button>',
               title: 'settings',
               scope: $scope,
               buttons: [
