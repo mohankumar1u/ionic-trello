@@ -3,10 +3,10 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var app =angular.module('trello', ['ionic'])
+var app = angular.module('trello', ['ionic'])
 
-app.run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
+app.run(function ($ionicPlatform) {
+  $ionicPlatform.ready(function () {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs).
     // The reason we default this to hidden is that native apps don't usually show an accessory bar, at
@@ -24,28 +24,28 @@ app.run(function($ionicPlatform) {
     }
   });
 });
-app.config(($stateProvider, $urlRouterProvider, $ionicConfigProvider)=>{
+app.config(($stateProvider, $urlRouterProvider, $ionicConfigProvider) => {
   $ionicConfigProvider.backButton.text('').icon('ion-close');
-  $stateProvider.state('board',{
-    url:'/boards',
-    templateUrl:'templates/board.html',
+  $stateProvider.state('board', {
+    url: '/boards',
+    templateUrl: 'templates/board.html',
     controller: 'boardCtrl'
 
   });
-  $stateProvider.state('lists',{
-    url:'/boards/:boardId',
-    templateUrl:'templates/lists.html',
+  $stateProvider.state('lists', {
+    url: '/boards/:boardId',
+    templateUrl: 'templates/lists.html',
     controller: 'listsCtrl'
 
   });
 
-  $stateProvider.state('cardDetails',{
-    url:'/boards/card/:cardId',
-    templateUrl:'templates/cardDetails.html',
+  $stateProvider.state('cardDetails', {
+    url: '/boards/card/:cardId',
+    templateUrl: 'templates/cardDetails.html',
     controller: 'cardDetailsCtrl'
 
   });
- 
+
   $urlRouterProvider.otherwise('/boards');
 
 });

@@ -15,27 +15,30 @@
             </button>
         </div>
         <div ng-repeat="cardlist in cardDetails" class="item item-divider">
-            
+
             <div class="padding">{{cardlist.name}} <ion-icon class="ion-chevron-down floatRight"
                     ng-click="dispalyChecklist(cardlist)"></ion-icon>
             </div>
             <div ng-class="{'checklistdisplay' : cardlist.toggled, 'checklistHide' : !cardlist.toggled}">
                 <div class="position-absolute " ng-repeat="checkItem in cardlist.checkItems">
-                    <li class = "item item-checkbox" >
+                    <li class="item item-checkbox">
                         {{checkItem.name}}
-                        <label class = "checkbox">
-                           <input type = "checkbox" ng-click="changeStatus(checkItem, cardlist)" ng-checked="checkItem.state=='complete'"/>
+                        <label class="checkbox">
+                            <input type="checkbox" ng-click="changeStatus(checkItem, cardlist)"
+                                ng-checked="checkItem.state=='complete'" />
                         </label>
-                     </li>
-                    <ion-icon  ng-click="deleteCheckItem(checkItem, cardlist, $index)" class="ion-close close-icon floatRight"></ion-icon>
+                    </li>
+                    <ion-icon ng-click="deleteCheckItem(checkItem, cardlist, $index)"
+                        class="ion-close close-icon floatRight"></ion-icon>
                 </div>
-                
+
                 <div class="item item-input-inset">
                     <label class="item-input-wrapper">
-                        <input ng-enter="addcheckItem(val,$index);val = ''" ng-model="val" type="text" placeholder="add new checkItem">
+                        <input ng-enter="addcheckItem(val,$index);val = ''" ng-model="val" type="text"
+                            placeholder="add new checkItem">
 
                     </label>
-                   
+
                 </div>
             </div>
         </div>
